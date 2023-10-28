@@ -33,5 +33,9 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 0,
     '@typescript-eslint/no-explicit-any': 'error',
+    'react/destructuring-assignment': 'off',
+    'react/state-in-constructor': 'off',
+    'import/prefer-default-export': 'off',
+    'react/prefer-stateless-function': 'off',
   },
 };
