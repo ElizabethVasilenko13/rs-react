@@ -37,5 +37,6 @@ module.exports = {
     'react/state-in-constructor': 'off',
     'import/prefer-default-export': 'off',
     'react/prefer-stateless-function': 'off',
+    'no-promise-executor-return': 'off',
   },
 };

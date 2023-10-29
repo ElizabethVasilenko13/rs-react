@@ -1,22 +1,25 @@
 import { Component } from 'react';
 import { BeerApiResp } from '../../models/Api.interface';
-
-type SearchResultsProps = {
-  searchResult: BeerApiResp[];
-  loading: boolean;
-};
+import { SearchResultsProps } from '../../models/SearchResult.interface';
+import SearchItem from '../SearchItem/SearchItem';
+import styles from './SearchResults.module.scss';
 
 class SearchResults extends Component<SearchResultsProps> {
   render() {
     const { searchResult } = this.props;
     return (
       <div>
-        {searchResult.length === 0 ? (
-          <div>No results found</div>
+        {!searchResult ? (
+          <h1>Oops, something went wrong...</h1>
         ) : (
-          searchResult.map((searchItem: BeerApiResp) => (
-            <div key={searchItem.id}>{searchItem.name}</div>
-          ))
+          <>
+            <h1>Our beer</h1>
+            <div className={styles.beerContainer}>
+              {searchResult.map((searchItem: BeerApiResp) => (
+                <SearchItem key={searchItem.id} beer={searchItem} />
+              ))}
+            </div>
+          </>
         )}
       </div>
     );

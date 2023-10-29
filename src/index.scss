@@ -1,7 +1,10 @@
+$background-color: #ebe4d4;
 body {
-  background-color: #EBE4D4;
+  background-color: $background-color;
+  font-family: 'Righteous', cursive;
 }
 
-.hello {
-  color: white;
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
 }

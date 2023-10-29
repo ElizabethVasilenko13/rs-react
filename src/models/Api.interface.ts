@@ -15,6 +15,7 @@ export interface BeerApiResp {
   description: string;
   abv: number;
   ibu: number;
+  image_url: string;
   target_fg: number;
   target_og: number;
   ebc: number;

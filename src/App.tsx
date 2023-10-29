@@ -2,15 +2,11 @@ import { Component } from 'react';
 import SearchBar from './components/SearchBar/SearchBar';
 import { fetchSearchResults } from './services/fetchApi';
 import SearchResults from './components/SearchResults/SearchResults';
-import { BeerApiResp } from './models/Api.interface';
+import { AppState } from './models/App.interface';
+import Loader from './components/Loader/Loader';
 
-type State = {
-  searchResult: BeerApiResp[];
-  loading: boolean;
-};
-
-class App extends Component<Record<string, unknown>, State> {
-  state: State = {
+class App extends Component<Record<string, unknown>, AppState> {
+  state: AppState = {
     searchResult: [],
     loading: true,
   };
@@ -34,9 +30,9 @@ class App extends Component<Record<string, unknown>, State> {
   render() {
     const { searchResult, loading } = this.state;
     return (
-      <div>
+      <div className="app-container">
         <SearchBar onSearch={this.handleSearch} />
-        <SearchResults searchResult={searchResult} loading={loading} />
+        {loading ? <Loader /> : <SearchResults searchResult={searchResult} />}
       </div>
     );
   }
