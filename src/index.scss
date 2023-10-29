@@ -1,0 +1,15 @@
+$background-color: #ebe4d4;
+body {
+  background-color: $background-color;
+  font-family: 'Righteous', cursive;
+}
+
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.error {
+  text-align: center;
+  margin: 40px auto;
+}
