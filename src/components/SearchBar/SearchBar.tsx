@@ -3,6 +3,7 @@ import {
   SearchBarProps,
   SearchBarState,
 } from '../../models/SearchBar.interface';
+import styles from './SearcBar.module.scss';
 
 class SearchBar extends Component<SearchBarProps, SearchBarState> {
   state = {
@@ -26,14 +27,19 @@ class SearchBar extends Component<SearchBarProps, SearchBarState> {
     const { searchQuery } = this.state;
     return (
       <div>
-        <form>
+        <form className={styles.form}>
           <input
+            className={styles.input}
             type="text"
             placeholder="Search..."
             value={searchQuery}
             onChange={this.handleInput}
           />
-          <button onClick={this.handleSearch} type="submit">
+          <button
+            onClick={this.handleSearch}
+            type="submit"
+            className={styles.button}
+          >
             Search
           </button>
         </form>

@@ -9,7 +9,7 @@ class SearchResults extends Component<SearchResultsProps> {
     const { searchResult } = this.props;
     return (
       <div>
-        {!searchResult ? (
+        {searchResult.length === 0 || !searchResult ? (
           <h1>Oops, something went wrong...</h1>
         ) : (
           <>
