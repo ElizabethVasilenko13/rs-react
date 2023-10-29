@@ -4,4 +4,5 @@ export interface SearchBarProps {
 
 export interface SearchBarState {
   searchQuery: string;
+  isError: boolean;
 }

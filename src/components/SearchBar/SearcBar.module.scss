@@ -5,27 +5,32 @@
   display: flex;
   align-items: center;
 
-
   input {
     width: 70%;
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
     filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.1));
     margin-right: 20px;
     padding: 3px 0px 3px 15px;
   }
 
-  input, button {
-    border-radius: 20px;
-    border: none;
-    font-size: 16px;
-    height: 36px;
-  }
 
-  button {
-    padding: 10px;
-    background-color: #E4C006;
-    cursor: pointer;
-  }
 }
 
+input,
+button {
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  height: 36px;
+}
 
+button {
+  padding: 10px;
+  background-color: #e4c006;
+  cursor: pointer;
+}
+
+.buttonError {
+  background-color: #9d977c80;
+  margin-top: 10px;
+}

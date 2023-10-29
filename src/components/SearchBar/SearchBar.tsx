@@ -8,6 +8,7 @@ import styles from './SearcBar.module.scss';
 class SearchBar extends Component<SearchBarProps, SearchBarState> {
   state = {
     searchQuery: localStorage.getItem('searchQuery') || '',
+    isError: false,
   };
 
   handleInput = ({
@@ -23,8 +24,12 @@ class SearchBar extends Component<SearchBarProps, SearchBarState> {
     this.props.onSearch(searchQuery.trim());
   };
 
+  handleError = () => {
+    this.setState({ isError: true });
+  };
+
   render() {
-    const { searchQuery } = this.state;
+    const { searchQuery, isError } = this.state;
     return (
       <div>
         <form className={styles.form}>
@@ -43,6 +48,17 @@ class SearchBar extends Component<SearchBarProps, SearchBarState> {
             Search
           </button>
         </form>
+        <button
+          onClick={this.handleError}
+          type="button"
+          className={styles.buttonError}
+        >
+          Show Error
+        </button>
+        {isError &&
+          (() => {
+            throw new Error('I crashed!');
+          })()}
       </div>
     );
   }
